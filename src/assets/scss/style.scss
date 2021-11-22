@@ -1,0 +1,24 @@
+@import "variables";
+
+@import "~bootstrap";
+@import "~bootstrap-vue";
+
+
+
+.btn, h1, h2, h3, h4, h5, h6{
+  font-family: 'Berkshire Swash', cursive;
+  color: $tertiary;
+}
+
+.nav-item, .nav-pills, .nav-link{
+  font-family: 'Comfortaa', cursive;
+  color: $tertiary;
+}
+
+.btn{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+

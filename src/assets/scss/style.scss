@@ -3,22 +3,40 @@
 @import "~bootstrap";
 @import "~bootstrap-vue";
 
+body{
+  background-color: $primary;
+}
 
+.btn {
+  background-color: transparent;
+  border-color: transparent;
 
-.btn, h1, h2, h3, h4, h5, h6{
+}
+
+.btn, h1, h2, h3, h4, h5, h6 {
   font-family: 'Berkshire Swash', cursive;
   color: $tertiary;
 }
 
-.nav-item, .nav-pills, .nav-link{
-  font-family: 'Comfortaa', cursive;
-  color: $tertiary;
-}
+#app {
 
-.btn{
-  background-color: transparent;
-  border-color: transparent;
-}
+  .nav-link{
+    font-family: 'Comfortaa', cursive;
+    color: $tertiary;
 
+  }
+
+  .nav-link:hover{
+    text-shadow: 2px 2px $primary;
+  }
+
+
+  .btn:hover, .btn:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+  }
+
+
+}
 
 

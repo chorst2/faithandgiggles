@@ -1,18 +1,17 @@
 <template>
 <div>
-  <b-card :src="getImgUrl(item.image)" img-alt="product image" img-left class="mb-3">
+
+  <b-card>
+    <b-card-img height="250px" width="150px" :src="getImgUrl(item.image)"></b-card-img>
     <b-card-body>
-      <h4><b>{{item.name}}<br>${{item.price}}</b></h4>
+      <p><b>{{item.name}}<br>${{item.price}}</b></p>
     </b-card-body>
     <b-card-footer>
-<!--       have a v-model in the v-form-input to grab the quantity? -->
-      <b-form-input
-          id="quantity-input"
-          type="number"
-          default="1"
-          >
-      </b-form-input>
-      <b-button @click="removeFromCart(item)"><b-icon icon="trash-fill"></b-icon></b-button>
+      <b-row>
+        <b-col cols="5"><p>Quantity: </p></b-col>
+        <b-col cols="5"><b-form-input v-model="item.quantity" id="quantity-input" type="number" number></b-form-input></b-col>
+        <b-col cols="2"><b-button @click="removeFromCart(item)"><b-icon icon="trash-fill"></b-icon></b-button></b-col>
+      </b-row>
     </b-card-footer>
   </b-card>
 
@@ -38,5 +37,13 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/scss/variables";
+
+.card-img {
+  width: 50%;
+}
+p{
+  font-family: 'Comfortaa', cursive;
+}
+
 
 </style>

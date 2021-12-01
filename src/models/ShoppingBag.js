@@ -1,28 +1,29 @@
-
 function ShoppingBag() {
     let cartArray = [];
 
     cartArray.addToCart = function(item){
-        //add item to cart array
-        this.push(item);
+        //find index of item in the cart
+        let itemsLocation = this.indexOf(item);
+        //if item is in the cart then increase its quantity in the cart
+        if(itemsLocation > -1){
+            cartArray[itemsLocation].quantity++;
+        }
+        //otherwise if it is not in the cart then add it to the cart
+        else{
+            //add item to cart array
+            this.push(item);
+        }
+
     }
 
-    cartArray.checkOutBag = function(){
-        //put details into firebase
-        //name and phone number and items ordered (id and name and quantity and price)
-
-
+    cartArray.clearBag = function(){
         //empty array
         cartArray.splice(0);
 
     }
 
-    // cartArray.changeQuantity = function(item){
-    //
-    // }
-
-
     cartArray.removeFromCart = function(item){
+        //removes specific item from cart
         this.splice(this.indexOf(item), 1);
 
         return this;

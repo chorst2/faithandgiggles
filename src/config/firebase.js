@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import { firestorePlugin } from 'vuefire'
 import firebase from 'firebase/app';
+import "firebase/firestore";
+import "firebase/auth";
+import "firebase/storage";
+
 
 Vue.use(firestorePlugin)
 
@@ -18,6 +22,11 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
+
+
+
+
 // export default firebase;
 
 const db = firebase.firestore();
@@ -28,6 +37,7 @@ export {db, auth, storage};
 
 //now whenever i want to use it I import db
 //example: in Library you would import db
+//retreiving
 //then:  firestore: {
 //         items: db.collection('items'),
 //      },

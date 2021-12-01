@@ -88,8 +88,8 @@
         <StoreInfoCard icon="telephone-fill" title="Contact">
           <template #cardText>
             <p class="cardTextContent">
-              <b>Email:</b> fg.4life@yahoo.com<br>
-              <b>Phone:</b> (262) 397-8689
+              <b>Email:</b> <a href = "mailto: fg.4life@yahoo.com">fg.4life@yahoo.com</a><br>
+              <b>Phone:</b> <a href = "tel:+1-262-397-8689">(262) 397-8689</a>
             </p>
           </template>
         </StoreInfoCard>
@@ -108,20 +108,17 @@
           </b-col>
     </b-row>
 
-    <Footer></Footer>
 
   </div>
 </template>
 
 <script>
 import StoreInfoCard from "../components/StoreInfoCard";
-import Footer from "../components/Footer";
 
 export default {
   name: "HomePage",
   components: {
     StoreInfoCard,
-    Footer,
   },
   data() {
     return {
@@ -164,4 +161,14 @@ export default {
 .cardTextContent{
   font-size: 13px;
 }
+
+a {
+  color: black;
+}
+
+a:hover{
+  color: $primary;
+}
+
+
 </style>

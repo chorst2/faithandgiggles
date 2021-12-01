@@ -32,7 +32,7 @@ const router = new VueRouter({
     //the name: just gives us a way to reference our route
     { path: '/', component: HomePage }, // default page
     { name: 'home', path: '/home', component: HomePage},
-    { name: 'products', path: '/products', component: ProductPage},
+    { name: 'products', path: '/products', component: ProductPage, props: true},
     { name: 'gift guide quiz', path: '/gift-guides-quiz', component: GuideQuiz},
     {name: 'gift guide results', path: '/gift-guides-quiz/results', component: GuideQuizResults},
     {name: 'shopping bag', path: '/shopping-bag', component: ShoppingBagPage},

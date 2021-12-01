@@ -2,21 +2,45 @@
 function StoreCollection(){
     let arr = [];
 
+    //add product to store collection
     arr.addItem = function(item){
         this.push(item);
 
-        //allows for chaining
-        //this is referring to the array
         return this;
     }
-    //TODO: create filters given the tags on the objects
-    //check recording to see how to filter by tags array
 
-    // arr.under25FemaleFun = function(){
-    //     return this.filter(function(item){
-    //         return !item.purchased && item.category === 'want';
-    //     });
-    // },
+
+    //filter to display products recommended for user based on quiz results
+
+    //arr is the array carrying all of the store items
+    //selected tags are the tags that were chosen from the quiz results
+    //item is referring to each product in the store collection
+
+
+    //original
+    // arr.quizFilter = function(selectedTags){
+    //            return arr.filter(item => selectedTags.includes(item.tags));
+    // }
+
+    //TODO: still doesnt work
+    arr.quizFilter = function(selectedTags){
+        let tagsArray = Object.values(selectedTags);
+        let filteredItems = [];
+        let ageAppropriate = arr.filter(item => {
+            return item.tags.includes(selectedTags.first);
+        });
+        ageAppropriate.forEach(item => {
+            item.tags.forEach(tag => {
+            if(tagsArray.includes(tag)){
+                    let itemLocation = filteredItems.indexOf(item);
+                    if(itemLocation === -1) filteredItems.push(item);
+                }
+            })
+        })
+        console.log(filteredItems);
+        return filteredItems;
+    }
+
 
 
 

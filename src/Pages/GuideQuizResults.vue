@@ -1,19 +1,25 @@
 <template>
   <div>
-    <h2>Your Custom Results</h2>
+    <h2 class="animate__animated animate__zoomIn">Your Custom Results</h2>
 
-    <Footer></Footer>
+
 
   </div>
 </template>
 
 <script>
-import Footer from "../components/Footer";
+
 
 export default {
   name: "GuideQuizResults",
   components: {
-    Footer
+
+  },
+
+  data() {
+    return {
+
+      }
   },
 }
 </script>

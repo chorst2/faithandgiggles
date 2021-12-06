@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card>
-      <b-card-img height="250px" width="250px" :src="getImgUrl(item.image)"></b-card-img>
+      <b-card-img :src="getImgUrl(item.image)"></b-card-img>
       <b-card-body>
         <h3><b>${{item.price}}<br>{{item.name}}</b></h3>
       </b-card-body>

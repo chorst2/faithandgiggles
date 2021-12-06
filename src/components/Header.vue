@@ -31,7 +31,7 @@ export default {
 
   #header{
     background-color: $accent;
-    //height: 70px;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
 
  #businessName{
@@ -45,5 +45,6 @@ export default {
  #giggles{
    font-family: 'Bonbon', cursive;
  }
+
 
 </style>

@@ -35,9 +35,4 @@ const storage = firebase.storage();
 
 export {db, auth, storage};
 
-//now whenever i want to use it I import db
-//example: in Library you would import db
-//retreiving
-//then:  firestore: {
-//         items: db.collection('items'),
-//      },
+

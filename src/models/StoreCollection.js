@@ -9,6 +9,10 @@ function StoreCollection(){
         return this;
     }
 
+    arr.getProducts = function(){
+        return arr;
+    }
+
 
     //filter to display products recommended for user based on quiz results
 
@@ -16,13 +20,6 @@ function StoreCollection(){
     //selected tags are the tags that were chosen from the quiz results
     //item is referring to each product in the store collection
 
-
-    //original
-    // arr.quizFilter = function(selectedTags){
-    //            return arr.filter(item => selectedTags.includes(item.tags));
-    // }
-
-    //TODO: still doesnt work
     arr.quizFilter = function(selectedTags){
         let tagsArray = Object.values(selectedTags);
         let filteredItems = [];
@@ -37,10 +34,9 @@ function StoreCollection(){
                 }
             })
         })
-        console.log(filteredItems);
+        // console.log(filteredItems);
         return filteredItems;
     }
-
 
 
 

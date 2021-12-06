@@ -1,9 +1,9 @@
 <template>
   <div>
     <div v-if="authUser.uid">
-      <h2 class="animate__animated animate__zoomIn">Orders</h2>
+      <h2 class="pt-3 animate__animated animate__zoomIn">Orders</h2>
       <div v-for="eachOrder in orders" :key="eachOrder.id">
-        <OrderDetails :order="eachOrder"></OrderDetails>
+        <OrderDetails class="p-2" :order="eachOrder"></OrderDetails>
       </div>
     </div>
 

@@ -1,8 +1,15 @@
 <template>
   <div>
-    <h3>{{orderItems.id}} - {{orderItems.name}}</h3>
-    <h5>Total: ${{getTotal}}</h5>
-    <h5>Quantity: {{orderItems.quantity}}</h5>
+    <b-card>
+      <b-card-title>
+        <b>{{orderItems.name}}</b>
+      </b-card-title>
+      <b-card-body>
+        Sku: {{orderItems.id}}<br>
+        Quantity: {{orderItems.quantity}}
+      </b-card-body>
+    </b-card>
+
   </div>
 
 </template>
@@ -31,7 +38,7 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/variables";
 
-  h3, h5 {
+  .card-title, .card-body{
     font-family: 'Comfortaa', cursive;
   }
 

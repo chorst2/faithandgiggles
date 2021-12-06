@@ -17,6 +17,20 @@ body{
   font-family: 'Berkshire Swash', cursive;
   color: $tertiary;
 }
+.card-img{
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.suggested-item .card-img{
+  max-width: 150px;
+}
+
+.suggested-item .card{
+  max-width: 300px;
+}
+
+
 
 #app {
 
@@ -35,6 +49,8 @@ body{
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     transform: translateY(-0.25em);
   }
+
+
 
 
 }

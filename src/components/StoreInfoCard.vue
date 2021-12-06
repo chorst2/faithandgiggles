@@ -1,7 +1,7 @@
 <template>
   <b-card>
     <div class="text-center">
-      <b-icon :icon="icon"></b-icon>
+      <b-avatar :icon="icon"></b-avatar>
     </div>
     <b-card-body>
       <b-card-title id="infoCardTitle">{{title}}</b-card-title>

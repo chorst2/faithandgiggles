@@ -10,7 +10,6 @@ import VueRouter from 'vue-router'
 import HomePage from "./Pages/HomePage";
 import ProductPage from "./Pages/ProductPage";
 import GuideQuiz from "./Pages/GuideQuiz";
-import GuideQuizResults from "./Pages/GuideQuizResults";
 import ShoppingBagPage from "./Pages/ShoppingBagPage";
 import LogInPage from "./Pages/LogInPage";
 import OrdersPage from "./Pages/OrdersPage";
@@ -34,7 +33,6 @@ const router = new VueRouter({
     { name: 'home', path: '/home', component: HomePage},
     { name: 'products', path: '/products', component: ProductPage, props: true},
     { name: 'gift guide quiz', path: '/gift-guides-quiz', component: GuideQuiz},
-    {name: 'gift guide results', path: '/gift-guides-quiz/results', component: GuideQuizResults},
     {name: 'shopping bag', path: '/shopping-bag', component: ShoppingBagPage},
     {name: 'log in page', path: '/log-in', component: LogInPage},
     {name: 'orders page', path: '/orders', component: OrdersPage},

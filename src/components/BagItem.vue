@@ -21,11 +21,15 @@
 export default {
   name: "BagItem",
   props: {
+    // refers to the product that will be displayed in the bagItem component
     item: Object,
+    // refers to the method that will remove the item from the cart
     removeFromCart: Function,
+    // refers to the method that will change the quantity of the item in the cart
     changeQuantity: Function,
   },
   methods: {
+    //this makes the images load when the page loads so they appear on screen
     getImgUrl(image) {
       let images = require.context('../assets/images/', false, /\.jpg$/)
       return images('./' + image)

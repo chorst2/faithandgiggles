@@ -39,17 +39,17 @@
 
 export default {
   name: "GuideQuiz",
-  components: {
-  },
   methods: {
+    //when quiz is submitted send the quiz results to the router with the name products
     onSubmit() {
       this.$router.push({ name: 'products', params: { selectedTags: this.results } })
-      console.log(this.results);
     }
   },
   data() {
     return {
+      //displays the form
       show: true,
+      //object to store the results from the quiz
       results: {
         first: '',
         second: '',
@@ -58,9 +58,6 @@ export default {
       }
     }
   },
-  props: {
-
-  }
 }
 </script>
 

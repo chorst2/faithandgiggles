@@ -17,14 +17,17 @@
 export default {
   name: "StoreInfoCard",
   props: {
+    //the title for the card
     title: {
       type: String,
       required: true,
     },
+    // the icon that will be displayed in the card
     icon: {
       type: String,
       required: true,
     },
+    // the text that will be displayed in the card
     pText: {
       type: String,
 

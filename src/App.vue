@@ -24,8 +24,11 @@ export default {
   },
   data(){
     return {
+      //reference to the shopping bag model
       shoppingBag: new ShoppingBag(),
+      //reference to if the authenticated users id
       authUser: {uid: ''},
+      //reference to the store collection model and its products
       products: new StoreCollection()
           .addItem(new StoreItemModel(1, 'geode state ornament.jpg', 'Geode State Ornament', 18, ['20-45', '46up', 'calm'], 1))
           .addItem(new StoreItemModel(2, 'essential oil shower steamers.jpg', 'Essential Oil Shower Steamers', 15, ['13-19', '20-45', 'calm'], 1))
@@ -64,23 +67,19 @@ export default {
     }
   },
   created: function() {
+    //anytime a user logs in or logs out this is ran
     auth.onAuthStateChanged((user) => {
       if (user) {
-
         console.log('Signed in as: ', user);
 
         //store entire user object in our app
         this.authUser = user;
-        // this.authUser = new User(user);
-
-
       } else {
         // User is signed out.
         console.log('Not signed in.');
 
         //remove user from app
         this.authUser = {uid: ''};
-
       }
     });
   },

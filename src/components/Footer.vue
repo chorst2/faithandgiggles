@@ -12,9 +12,11 @@ import {auth} from "../config/firebase";
 export default {
   name: "Footer",
   props: {
+    // refers to the determining factor on if log in button or log out button is shown
     authUser: Object,
   },
   methods: {
+    // method to log out of the owners order page
     loggingOut(){
       auth.signOut()
           .then(() => {

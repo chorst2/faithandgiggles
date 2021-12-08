@@ -1,5 +1,5 @@
 function StoreItem(id, image, name, price, tags, quantity){
-
+    //all of the information required to create a product for the store
     this.id = id;
     this.image = image;
     this.name = name;

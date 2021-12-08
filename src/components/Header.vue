@@ -21,6 +21,7 @@
 export default {
   name: "Header",
   props: {
+    // refers to the determining factor on if orders is shown in the header or not
     authUser: Object,
   },
 }

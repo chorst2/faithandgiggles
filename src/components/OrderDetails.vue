@@ -33,6 +33,7 @@ import {db} from "../config/firebase.js";
 export default {
   name: "OrderDetails",
   props: {
+    // refers to the order in firebase
     order: Object,
 
   },
@@ -40,6 +41,7 @@ export default {
     OrderItems
   },
   computed: {
+    // calculates how much money is made from the order
     totalOrderCost(){
       var orderTotalCost = 0;
       for(var i = 0; i < this.order.items.length; i++){
@@ -49,8 +51,8 @@ export default {
     }
   },
   methods: {
+    // removes an order from firebase - so the owner can mark it as completed
     remove(){
-      // remove order
       db.collection('orders').doc(this.order.id)
           .delete()
           .catch(error => {

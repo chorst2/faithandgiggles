@@ -33,7 +33,7 @@
     </b-row>
 
 <!--    items displayed in shopping bag-->
-    <b-row class="py-3">
+    <b-row class="pb-4">
       <b-col md="9" v-if="shoppingBag.length > 0">
           <b-row>
             <bag-item
@@ -136,24 +136,30 @@ export default {
     StoreItem
   },
   props:{
+    //refers to the shopping bag model to access its methods
     shoppingBag: Array,
+    //refers to the store collection model that has access to the array and methods
     products: Array,
   },
   data() {
      return {
+       //object that stores the user information to send to firebase
       order: {
         firstName: '',
         lastName: '',
         phoneNumber: '',
         items: this.shoppingBag,
       },
+       //props needed for displaying the order confirmation alert
       dismissOrderSecs: 5,
       dismissOrderCountDown: 0,
+       //props needed for displaying the added to cart alert
       dismissCartSecs: 5,
       dismissCartCountDown: 0,
     }
   },
   methods: {
+    //check out method - clears cart and sends info to firebase
     checkOut(){
       this.order.items = JSON.parse(JSON.stringify(this.shoppingBag));
       this.order.phoneNumber = this.formatPhoneNumber(this.order.phoneNumber);
@@ -167,6 +173,7 @@ export default {
         }
       })
     },
+    //method that formats the phone number to (###) ###-####
     formatPhoneNumber(phoneNumberString) {
       var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
       var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
@@ -175,14 +182,16 @@ export default {
       }
       return null;
     },
+    //methods that display the order confirmation alert
     orderCountDownChanged(dismissOrderCountDown) {
       this.dismissOrderCountDown = dismissOrderCountDown
     },
-    cartCountDownChanged(dismissCartCountDown) {
-      this.dismissCartCountDown = dismissCartCountDown
-    },
     showOrderAlert() {
       this.dismissOrderCountDown = this.dismissOrderSecs
+    },
+    //methods that display the added to cart alert
+    cartCountDownChanged(dismissCartCountDown) {
+      this.dismissCartCountDown = dismissCartCountDown
     },
     showCartAlert() {
       this.dismissCartCountDown = this.dismissCartSecs

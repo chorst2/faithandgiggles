@@ -68,7 +68,7 @@
 
   <!--      this card explains the store hours-->
         <b-col md="3">
-        <StoreInfoCard icon="clock" title="Hours">
+        <StoreInfoCard icon="clock" title="Hours" class="store-card">
           <template #cardText>
             <p class="cardTextContent">
               <b>Monday:</b> 9 am - 6 pm<br>
@@ -85,7 +85,7 @@
 
   <!--      this card explains the store contact info-->
         <b-col md="3">
-        <StoreInfoCard icon="telephone-fill" title="Contact">
+        <StoreInfoCard icon="telephone-fill" title="Contact" class="store-card">
           <template #cardText>
             <p class="cardTextContent">
               <b>Email:</b> <a href = "mailto: fg.4life@yahoo.com">fg.4life@yahoo.com</a><br>
@@ -97,7 +97,7 @@
 
   <!--      this card tells the store location-->
           <b-col md="3">
-        <StoreInfoCard icon="cursor-fill" title="Location">
+        <StoreInfoCard icon="cursor-fill" title="Location" class="store-card">
           <template #cardText>
             <p class="cardTextContent">
               42 N Main St<br>
@@ -122,11 +122,13 @@ export default {
   },
   data() {
     return {
+      //props needed for the picture carousel
       slide: 0,
       sliding: null,
     }
   },
   methods: {
+    //methods for moving the picture carousel
     onSlideStart() {
       this.sliding = true
     },
@@ -140,9 +142,8 @@ export default {
 <style scoped lang="scss">
 @import "../assets/scss/variables";
 
-.store-card-row{
-  //width: 80%;
-  //margin: 0 auto;
+.store-card{
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 #aboutUsHeader{
   font-family: 'Berkshire Swash', cursive;

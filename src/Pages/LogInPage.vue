@@ -67,22 +67,24 @@ import {auth} from "../config/firebase.js";
 
 export default {
   name: "LogInPage",
-  props: {
-
-  },
   data() {
     return {
+      //object that takes in the inputted email and password
       form: {
         email: '',
         password: '',
       },
+      //makes form appear
       show: true,
+      //stores the message that will be displayed if theres an error logging in
       errorMessage: '',
+      //props for the alert that displays the error message
       dismissSecs: 3,
       dismissCountDown: 0,
     }
   },
   methods: {
+    //resets the information in the log in form
     onReset(event) {
       event.preventDefault()
       // Reset our form values
@@ -94,11 +96,13 @@ export default {
       })
     },
 
+    //method that logs owner in and takes them to the orders page
     loggingIn() {
       auth.signInWithEmailAndPassword(this.form.email, this.form.password)
           .then(() => {
             this.$router.push('/orders');
           })
+          //displays an error if theres an error logging in
           .catch((error) => {
             // Handle Errors here.
             this.errorMessage = error.message;
@@ -107,6 +111,7 @@ export default {
           });
     },
 
+    //methods for displaying the alert
     countDownChanged(dismissCountDown) {
       this.dismissCountDown = dismissCountDown
     },

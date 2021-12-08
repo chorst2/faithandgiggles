@@ -18,12 +18,16 @@
 export default {
   name: "StoreItem",
   props: {
+    // refers to the product that will be displayed in the component
     item: Object,
+    // refers to the method that will add the product to the cart
     addCartFunction: Function,
+    // refers to the method that will display an alert when an item is added to the cart
     showCartMessageFunction: Function,
 
   },
   methods: {
+    //this makes the images load when the page loads so they appear on screen
     getImgUrl(image) {
       let images = require.context('../assets/images/', false, /\.jpg$/)
       return images('./' + image)

@@ -23,6 +23,7 @@ export default {
   name: "OrdersPage",
   data() {
     return {
+      //array for the orders in firebase
       orders: [],
     }
   },
@@ -30,12 +31,12 @@ export default {
     OrderDetails,
   },
   firestore: {
-    // bind as an array by default
-    //this is telling the orders: [] to fill with the orders from the database
+    //fills the orders array with the orders from the database/firebase
     orders: db.collection('orders'),
 
   },
   props: {
+    // refers to the determining factor on if user is authenticated to be viewing orders or not
     authUser: Object,
   },
 

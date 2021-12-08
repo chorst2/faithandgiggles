@@ -19,19 +19,10 @@
 export default {
   name: "OrderItems",
   props: {
+    // refers to the individual products in each order
     orderItems: Object,
 
   },
-  data(){
-    return {
-
-    }
-  },
-  computed: {
-    getTotal(){
-      return this.orderItems.price * this.orderItems.quantity;
-    }
-  }
 }
 </script>
 
